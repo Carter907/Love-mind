@@ -78,30 +78,38 @@ directive_list_t *directive_list_create(void) {
 }
 
 bool directive_list_append(directive_list_t *list, define_node_t *node) {
+
   if (list == NULL || node == NULL) {
     return false;
   }
+
   if (list->count >= list->capacity) {
+
     size_t new_cap = list->capacity * 2;
     define_node_t **resized =
         realloc(list->items, sizeof(define_node_t *) * new_cap);
     if (resized == NULL) {
       return false;
     }
+
     list->items = resized;
     list->capacity = new_cap;
   }
+
   list->items[list->count++] = node;
   return true;
 }
 
 void directive_list_free(directive_list_t *list) {
+
   if (list == NULL) {
     return;
   }
+
   for (size_t i = 0; i < list->count; i++) {
     define_node_free(list->items[i]);
   }
+
   free(list->items);
   free(list);
 }
