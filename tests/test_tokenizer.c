@@ -18,11 +18,11 @@ void test_tokenizer_single_token(void) {
 }
 
 void test_tokenizer_directive_sentence(void) {
-  char input[] = ".define Concept as Definition";
+  char input[] = "define Concept as Definition";
   char **tokens = tokenizer(input);
 
   TEST_ASSERT_NOT_NULL(tokens);
-  TEST_ASSERT_EQUAL_STRING(".define", tokens[0]);
+  TEST_ASSERT_EQUAL_STRING("define", tokens[0]);
   TEST_ASSERT_EQUAL_STRING("Concept", tokens[1]);
   TEST_ASSERT_EQUAL_STRING("as", tokens[2]);
   TEST_ASSERT_EQUAL_STRING("Definition", tokens[3]);
@@ -32,11 +32,11 @@ void test_tokenizer_directive_sentence(void) {
 }
 
 void test_tokenizer_whitespace_and_newlines(void) {
-  char input[] = ".set   Entity \t has \n - item1\n - item2";
+  char input[] = "set   Entity \t has \n - item1\n - item2";
   char **tokens = tokenizer(input);
 
   TEST_ASSERT_NOT_NULL(tokens);
-  TEST_ASSERT_EQUAL_STRING(".set", tokens[0]);
+  TEST_ASSERT_EQUAL_STRING("set", tokens[0]);
   TEST_ASSERT_EQUAL_STRING("Entity", tokens[1]);
   TEST_ASSERT_EQUAL_STRING("has", tokens[2]);
   TEST_ASSERT_EQUAL_STRING("-", tokens[3]);
