@@ -2,3 +2,5 @@ build/
 out.log
 love-mind
 examples/
+test_runner
+*.o

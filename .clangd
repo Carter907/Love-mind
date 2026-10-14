@@ -1,0 +1,13 @@
+CompileFlags:
+  Add:
+    - -std=c23
+    - -Isrc
+    - -Ilib/unity
+    - -Wall
+    - -Wextra
+
+---
+If:
+  PathMatch: .*\.h$
+CompileFlags:
+  Add: [-xc-header]

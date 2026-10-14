@@ -10,23 +10,24 @@ To build and test the project locally, you will need a standard C build environm
 - A C23-compatible compiler (e.g., `gcc` or `clang`)
 - `make`
 - `libedit` (for the interactive REPL)
-- `cunit` (for running the test suite)
 - `clang-format` (for code formatting)
+
+> *Note: Unit tests use the Unity framework, which is vendored directly in `lib/unity/`. No external test library installation is required.*
 
 **On Arch Linux:**
 ```bash
-sudo pacman -S base-devel libedit cunit clang
+sudo pacman -S base-devel libedit clang
 ```
 
 **On Debian / Ubuntu:**
 ```bash
 sudo apt-get update
-sudo apt-get install build-essential libedit-dev libcunit1-dev clang-format
+sudo apt-get install build-essential libedit-dev clang-format
 ```
 
 Once installed, you can build the project by running:
 ```bash
-make build
+make
 ```
 
 ---
