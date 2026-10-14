@@ -3,4 +3,6 @@ out.log
 love-mind
 examples/
 test_runner
+test_model_runner
+test_parser_runner
 *.o
